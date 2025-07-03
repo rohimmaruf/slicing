@@ -1,58 +1,120 @@
-import { Image, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { Image, StyleSheet, Text, View } from "react-native";
+
+
+const listData = [
+  {
+    id: 1,
+    kamar: 'Super Twin',
+    detail: 'Tersedia 3 kamar lagi',
+    harga: 1_000_000,
+    gambar: require('../slicing/villa.png')
+  },
+  {
+    id: 2,
+    kamar: 'Deluxe Double',
+    detail: 'Tersedia 3 lagi',
+    harga: 2_000_000,
+    gambar: require('../slicing/villa2.png')
+  },
+  {
+    id: 3,
+    kamar: 'Superior Quen',
+    detail: 'Tersedia 3 kamar lagi',
+    harga: 3_000_000,
+    gambar: require('../slicing/villa3.png')
+  },
+  {
+    id: 4,
+    kamar: 'Executive Quen',
+    detail: 'Tersedia 3 kamar lagi',
+    harga: 4_000_000,
+    gambar: require('../slicing/villa.png')
+  }
+]
+
+
 
 const Slicing = () => {
+  const { container, containKamar, imgVilla } = style;
+
   return (
-    <View style={{}}>
-      <View
-        style={{
-          borderWidth: 2,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            gap: 20,
-          }}
+    <>
+      <View style={container} >
+        <Text
+          style={{ fontWeight: 'bold', fontSize: 18, marginTop: 10, marginBottom: 10 }}
         >
-          <View>
-            <Image
-              source={require('../slicing/villa.png')}
-              style={{width:120, height:90, borderRadius: 20}}
-            />
-          </View>
-          <View style={{ gap: 5 }}>
-            <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-              Superior Twin
-            </Text>
-            <View style={{ flexDirection: "row" }}>
-              <View>
+          Pilih Kamar
+        </Text>
+        {listData.map((room) => {
+
+          console.log(harga);
+
+
+          const { id, kamar, detail, harga, gambar } = room;
+          const formatNumber = new Intl.NumberFormat('id-EN').format(harga)
+          return (
+
+            <View style={containKamar} key={id}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  gap: 20,
+                }}
+              >
                 <Image
-                  source={require('../slicing/Location.png')}
+                  source={gambar}
+                  style={imgVilla}
                 />
+                <View style={{ gap: 16 }}>
+                  <Text style={{ fontSize: 14, fontWeight: 'semiBold' }}>
+                    {kamar}
+                  </Text>
+                  <View style={{ flexDirection: 'row', gap: 5 }}>
+                    <Ionicons name='location' color='#7B22D3' />
+                    <Text style={{ fontSize: 8, color: "#7B22D3" }}>
+                      {detail}
+                    </Text>
+
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <Ionicons name="star" color="#FFCE31" />
+                    <Ionicons name="star" color="#FFCE31" />
+                    <Ionicons name="star" color="#FFCE31" />
+                    <Ionicons name="star" color="#FFCE31" />
+                    <Ionicons name="star" color="#ACACAC" />
+                  </View>
+                </View>
               </View>
-              <View>
-                <Text style={{ fontSize: 12, color: "#7B22D3" }}>
-                  Tersedia 3 kamar lagi
+              <View style={{ justifyContent: 'center', paddingHorizontal: 10 }}>
+                <Text style={{ fontWeight: 'semibold', fontSize: 12, color: '#7B22D3' }}>
+                  Rp. {formatNumber}
                 </Text>
               </View>
             </View>
-            <View style={{ flexDirection: "row" }}>
-              <Text>1</Text>
-              <Text>2</Text>
-              <Text>3</Text>
-              <Text>4</Text>
-              <Text>5</Text>
-            </View>
-          </View>
-        </View>
-        <View>
-          <Text>Rp. 1.000.000</Text>
-        </View>
+          )
+        })}
       </View>
-    </View>
+    </>
   );
 };
-
 export default Slicing;
+
+const style = StyleSheet.create(
+  {
+    container: {
+      marginHorizontal: 10,
+      gap: 15
+    },
+    containKamar: {
+      // borderWidth: 2,
+      flexDirection: "row",
+      justifyContent: "space-between",
+    },
+    imgVilla: {
+      width: 120,
+      height: 90,
+      borderRadius: 20
+    }
+  }
+)
