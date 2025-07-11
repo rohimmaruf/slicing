@@ -8,28 +8,32 @@ const listData = [
     kamar: 'Super Twin',
     detail: 'Tersedia 3 kamar lagi',
     harga: 1_000_000,
-    gambar: require('../slicing/villa.png')
+    gambar: require('../slicing/villa.png'),
+    rating: 3,
   },
   {
     id: 2,
     kamar: 'Deluxe Double',
     detail: 'Tersedia 3 lagi',
     harga: 2_000_000,
-    gambar: require('../slicing/villa2.png')
+    gambar: require('../slicing/villa2.png'),
+    rating: 4,
   },
   {
     id: 3,
     kamar: 'Superior Quen',
     detail: 'Tersedia 3 kamar lagi',
     harga: 3_000_000,
-    gambar: require('../slicing/villa3.png')
+    gambar: require('../slicing/villa3.png'),
+    rating: 5,
   },
   {
     id: 4,
     kamar: 'Executive Quen',
     detail: 'Tersedia 3 kamar lagi',
     harga: 4_000_000,
-    gambar: require('../slicing/villa.png')
+    gambar: require('../slicing/villa.png'),
+    rating: 1
   }
 ]
 
@@ -51,7 +55,7 @@ const Slicing = () => {
           console.log(harga);
 
 
-          const { id, kamar, detail, harga, gambar } = room;
+          const { id, kamar, detail, harga, gambar, rating } = room;
           const formatNumber = new Intl.NumberFormat('id-EN').format(harga)
           return (
 
@@ -78,11 +82,14 @@ const Slicing = () => {
 
                   </View>
                   <View style={{ flexDirection: "row" }}>
-                    <Ionicons name="star" color="#FFCE31" />
-                    <Ionicons name="star" color="#FFCE31" />
-                    <Ionicons name="star" color="#FFCE31" />
-                    <Ionicons name="star" color="#FFCE31" />
-                    <Ionicons name="star" color="#ACACAC" />
+                    {[...Array(5)].map((_, i) => (
+                      <Ionicons 
+                        key={i}
+                        name="star"
+                        color={i < rating ? "#FFCE31" : "#ACACAC"}
+
+                      />
+                    ))}
                   </View>
                 </View>
               </View>
