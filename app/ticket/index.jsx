@@ -1,4 +1,5 @@
 
+import { router } from "expo-router";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 const Ticket = () => {
@@ -10,6 +11,7 @@ const Ticket = () => {
             </Text>
             <Button
                 title="Home"
+                onPress={() => router.push('/ticket/splash')}
             />
         </View>
     )
