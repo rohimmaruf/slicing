@@ -109,6 +109,9 @@ const Home = () => {
                 <View style={{
                     alignItems: 'center',
                     borderWidth: 2,
+                    position: 'absolute',
+                    alignSelf: 'center',
+                    top: 190
                 }}>
                     <View style={{
                         backgroundColor: '#FFFFFF',
@@ -117,6 +120,7 @@ const Home = () => {
                         height: 90,
                         borderRadius: 10,
                         justifyContent: 'space-between'
+                        
                     }}>
                         {/* Contain 3.1 */}
                         <View style={
@@ -126,6 +130,7 @@ const Home = () => {
                                 alignItems: 'center',
                                 gap: 10,
                                 marginHorizontal: 40,
+
 
 
                             }
@@ -163,6 +168,7 @@ const Home = () => {
             {/* Contain 4 */}
             <View 
              style={{
+                top: 50,
                 flexDirection: 'row',
                 borderWidth: 2,
                 gap: 40,
@@ -172,9 +178,11 @@ const Home = () => {
                 justifyContent: 'center'
 
             }}>
-                {listMenu.map((i) => {
-                const {img, label} = listMenu
-                return <View style={{
+                {listMenu.map((menu) => {
+                const {img, label, id} = menu
+                return <View 
+                key={id}
+                style={{
                 backgroundColor: 'white',
                 alignItems: 'center'
             }}>
@@ -184,7 +192,7 @@ const Home = () => {
                     borderRadius: 14
                 }}>
                     <Image
-                        source={require('../../assets/images/hotel.png')}
+                        source={img}
                         style={{
                             width: 50,
                             height: 46
