@@ -1,4 +1,5 @@
-import { Image, Text, View } from "react-native";
+import { Tabs } from "expo-router";
+import { Image, ScrollView, Text, View } from "react-native";
 
 const listMenu = [
     {
@@ -32,6 +33,29 @@ const listMenu = [
         label: 'Spot'
     },
 
+]
+const listPromo = [
+    {
+        id: 1,
+        title: 'Pakai PAYLATER',
+        subtitle: 'Diskon',
+        angka: '50%',
+        img: require('../../assets/images/travel.png')
+    },
+    {
+        id: 2,
+        title: 'Pakai OVO',
+        subtitle: 'Diskon',
+        angka: '60%',
+        img: require('../../assets/images/travel.png')
+    },
+    {
+        id: 1,
+        title: 'Pakai GOPAY',
+        subtitle: 'Diskon',
+        angka: '30%',
+        img: require('../../assets/images/travel.png')
+    },
 ]
 
 const Home = () => {
@@ -120,7 +144,7 @@ const Home = () => {
                         height: 90,
                         borderRadius: 10,
                         justifyContent: 'space-between'
-                        
+
                     }}>
                         {/* Contain 3.1 */}
                         <View style={
@@ -166,46 +190,102 @@ const Home = () => {
                 </View>
             </View>
             {/* Contain 4 */}
-            <View 
-             style={{
-                top: 50,
-                flexDirection: 'row',
-                borderWidth: 2,
-                gap: 40,
-                marginVertical: 20,
-                marginHorizontal: 20,
-                flexWrap: 'wrap',
-                justifyContent: 'center'
-
-            }}>
-                {listMenu.map((menu) => {
-                const {img, label, id} = menu
-                return <View 
-                key={id}
+            <View
                 style={{
-                backgroundColor: 'white',
-                alignItems: 'center'
-            }}>
-                <View style={{
-                    backgroundColor: '#7B22D3',
-                    padding: 24,
-                    borderRadius: 14
+                    top: 50,
+                    flexDirection: 'row',
+                    borderWidth: 2,
+                    gap: 40,
+                    marginVertical: 20,
+                    marginHorizontal: 20,
+                    flexWrap: 'wrap',
+                    justifyContent: 'center'
+
                 }}>
-                    <Image
-                        source={img}
+                {listMenu.map((menu) => {
+                    const { img, label, id } = menu
+                    return <View
+                        key={id}
                         style={{
-                            width: 50,
-                            height: 46
+                            backgroundColor: 'white',
+                            alignItems: 'center'
+                        }}>
+                        <View style={{
+                            backgroundColor: '#7B22D3',
+                            padding: 24,
+                            borderRadius: 14
+                        }}>
+                            <Image
+                                source={img}
+                                style={{
+                                    width: 50,
+                                    height: 46
+                                }}
+                            />
+                        </View>
+                        <Text style={{ fontWeight: 'bold' }}>{label}</Text>
+
+                    </View>
+
+                })}
+            </View>
+            {/* conatain 5 slider */}
+            <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                style={{
+                    marginTop: 20,
+                    paddingHorizontal: 20
+                }}
+            >
+                {listPromo.map(({ id, title, subtitle, img, angka }) => (
+                    <View
+
+                        key={id}
+                        style={{
+                            backgroundColor: '#7B22D3',
+                            borderRadius: 20,
+                            flexDirection: 'row',
+                            marginRight: 10,
+                            alignItems: 'center',
+                            width: 300,
+                            height: 120,
+                            marginTop: 52,
+                            paddingLeft: 25,
+                            gap: 24
+                            
+
+
                         }}
-                    />
-                </View>
-                <Text style={{ fontWeight: 'bold' }}>{label}</Text>
+                    >
+                        <Image
+                            source={img}
+                            style={{
+                                width: 111,
+                                height: 91,
+                                resizeMode: 'contain'
 
-            </View>
+                            }}
 
-            })}
-            </View>
-            
+                        />
+                        <View style={{
+                            paddingTop: 10,
+                            paddingBottom: 10
+                        }}>
+                            <Text style={{color: 'white', fontWeight: 'bold'}}>{title}</Text>
+                            <Text style={{color: 'white', fontWeight: 'bold'}}>{subtitle}</Text>
+                            <Text style={{color: 'white', fontWeight: 'bold', fontSize: 40}}>{angka}</Text>
+
+                        </View>
+                    </View>
+                ))}
+            </ScrollView>
+
+        {/*6. Bottom Tabs */}
+            <Tabs/>
+            <Tabs.Screen
+                name='index'
+            />
 
 
         </View>
