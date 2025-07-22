@@ -282,10 +282,12 @@ const Home = () => {
             </ScrollView>
 
         {/*6. Bottom Tabs */}
-            <Tabs/>
+         <Tabs>
             <Tabs.Screen
-                name='index'
+                name="Index"
             />
+            <Tabs.Screen/>
+         </Tabs>
 
 
         </View>
