@@ -1,5 +1,5 @@
-import { Tabs } from "expo-router";
-import { Image, ScrollView, Text, View } from "react-native";
+import { router } from "expo-router";
+import { Button, Image, ScrollView, Text, View } from "react-native";
 
 const listMenu = [
     {
@@ -50,7 +50,7 @@ const listPromo = [
         img: require('../../assets/images/travel.png')
     },
     {
-        id: 1,
+        id: 3,
         title: 'Pakai GOPAY',
         subtitle: 'Diskon',
         angka: '30%',
@@ -281,14 +281,11 @@ const Home = () => {
                 ))}
             </ScrollView>
 
-        {/*6. Bottom Tabs */}
-         <Tabs>
-            <Tabs.Screen
-                name="Index"
-            />
-            <Tabs.Screen/>
-         </Tabs>
+        <Button
+         title='halaman pesanan'
+         onPress={() => router.push('/ticket/pesanan')}
 
+        />
 
         </View>
     )
