@@ -77,7 +77,8 @@ const Home = () => {
                 <View style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    paddingVertical: 20
+                    paddingVertical: 10,
+                    paddingTop: 15
                 }}>
                     <Image
                         source={require('../../assets/images/hamburgMenu.png')}
@@ -131,8 +132,8 @@ const Home = () => {
                 </View>
                 {/* Contain 3 */}
                 <View style={{
+                    elevation: 5,
                     alignItems: 'center',
-                    borderWidth: 2,
                     position: 'absolute',
                     alignSelf: 'center',
                     top: 190
@@ -194,7 +195,6 @@ const Home = () => {
                 style={{
                     top: 50,
                     flexDirection: 'row',
-                    borderWidth: 2,
                     gap: 40,
                     marginVertical: 20,
                     marginHorizontal: 20,
