@@ -139,7 +139,8 @@ const Home = () => {
                     top: 190
                 }}>
                     <View style={{
-                        backgroundColor: '#FFFFFF',
+                        elevation: 10,
+                        backgroundColor: '#FFFF',
                         flexDirection: 'row',
                         width: 400,
                         height: 90,
