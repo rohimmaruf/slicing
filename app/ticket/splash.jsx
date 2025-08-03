@@ -42,10 +42,17 @@ const Splash = () => {
             }}>
                 T
             </Text>
-            <Image
+            <View
+                style={{
+                    marginTop: 20
+                }}
+            >
+                 <Image
                 source={require('../../assets/images/plane1.png')}
                 style={{height: 40, width: 40}}
             />
+            </View>
+           
             <Text style={{
                
                 fontWeight: 'medium',

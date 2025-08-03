@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons"
-import { Button, Image, Text, View } from "react-native"
+import { Image, Text, View } from "react-native"
 import Appbar from "./appbar"
 
 
@@ -32,10 +32,6 @@ const Profil = () => {
             >
                 John Doe
             </Text>
-            <Button
-                color={'purple'}
-                title='Edit Profil'
-            />
             {/* Contain $ di bawah */}
             <View
                 style={{
@@ -44,24 +40,43 @@ const Profil = () => {
                     flexDirection:'row',
                     width: 400,
                     height: 60,
-                    elevation: 2,
-                    borderRadius: 30
+                    elevation: 6,
+                    backgroundColor: '#fff',
+                    borderRadius: 16,
+                    justifyContent: 'space-between',
+                    alignContent: 'center',
+                    paddingHorizontal: 10,
+                    paddingVertical: 12
+
                 }}
             >
-                <Ionicons
+                <View
+                    style={{
+                        flexDirection: 'row'
+                    }}
+                >
+                    <Ionicons
                     name="settings-outline"
-                    color={'purple'}
+                    color={'#7B22D3'}
                     size={30}
                 />
-                <Text>
+                <Text
+                    style={{
+                        paddingTop: 4,
+                        paddingLeft: 10,
+                        fontWeight:'bold'
+                    }}
+                >
                     Setting
                 </Text>
+                </View>
                 <Ionicons
                     name="arrow-forward-circle-outline"
-                    color={'purple'}
+                    color={'#7B22D3'}
                     size={30}
                 />
             </View>
+            
             </View>
         </View>
     )

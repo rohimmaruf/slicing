@@ -12,9 +12,23 @@ const HomeScreen = () => {
 
     return (
         <View style={container}>
-            <Text>
-                HomeScreen
-            </Text>
+            <View
+                style={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <Text
+                    style={{
+                        fontWeight: 'bold',
+
+                        fontSize: 30
+                    }}
+                >
+                    Menu
+                </Text>
+            </View>
+
             <Button
                 title="Produk"
                 onPress={() => router.push('/produk')}
@@ -31,7 +45,7 @@ const HomeScreen = () => {
                 title="Halaman slicing"
                 onPress={() => router.push('/slicing')}
             />
-             <Button
+            <Button
                 title="Halaman ScrollView"
                 onPress={() => router.push('/scrollview')}
             />
