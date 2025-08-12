@@ -53,6 +53,10 @@ const HomeScreen = () => {
                 title="Halaman Ticketing"
                 onPress={() => router.push('/ticket')}
             />
+            <Button
+                title="Halaman Finance"
+                onPress={() => router.push('/finance')}
+            />
 
         </View>
     );
