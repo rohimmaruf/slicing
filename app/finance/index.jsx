@@ -17,7 +17,7 @@ const Finance = () => {
 
     return(
         <View
-            className = "flex-1 items-center justify-center bg-black"
+            className = "flex-1 items-center justify-center bg-primary"
         >
             <Ionicons
                name="cash-outline"

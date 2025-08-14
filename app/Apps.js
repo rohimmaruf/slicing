@@ -57,6 +57,10 @@ const HomeScreen = () => {
                 title="Halaman Finance"
                 onPress={() => router.push('/finance')}
             />
+            <Button
+                title="Halaman Todo"
+                onPress={() => router.push('/todo')}
+            />
 
         </View>
     );
