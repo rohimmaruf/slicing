@@ -61,6 +61,10 @@ const HomeScreen = () => {
                 title="Halaman Todo"
                 onPress={() => router.push('/todo')}
             />
+            <Button
+                title="Halaman 10.000 jam"
+                onPress={() => router.push('/progres')}
+            />
 
         </View>
     );
